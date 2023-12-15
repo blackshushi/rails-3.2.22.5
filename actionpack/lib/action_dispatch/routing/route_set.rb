@@ -592,7 +592,7 @@ module ActionDispatch
         path_options = yield(path_options) if block_given?
 
         path_addition, params = generate(path_options, path_segments || {})
-        path << path_addition
+        path += path_addition
         params.merge!(options[:params] || {})
 
         ActionDispatch::Http::URL.url_for(options.merge!({
