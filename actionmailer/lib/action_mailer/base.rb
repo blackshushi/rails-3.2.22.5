@@ -449,7 +449,7 @@ module ActionMailer #:nodoc:
     def initialize(method_name=nil, *args)
       super()
       @mail_was_called = false
-      @_message = Mail.new
+      @_message = Mail.new ""
       process(method_name, *args) if method_name
     end
 
